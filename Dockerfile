@@ -4,6 +4,8 @@ FROM node:14.17-alpine3.11 as build-step
 
 RUN mkdir -p /app
 
+RUN ls
+
 WORKDIR /app
 
 COPY package.json /app
