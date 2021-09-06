@@ -2,11 +2,11 @@
 
 FROM node:14.17-alpine3.11 as build-step
 
-RUN mkdir -p /app
+RUN mkdir -p /usr/src/app
 
 RUN ls
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package.json /app
 
@@ -20,4 +20,4 @@ RUN npm run build --prod
 
 FROM nginx:1.21.1-alpine
 
-COPY --from=build-step /app /usr/share/nginx/html
+COPY --from=build-step /usr/src/app /usr/share/nginx/html
