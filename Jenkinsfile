@@ -15,7 +15,7 @@ pipeline {
         }
          stage('DockerRun') {
       steps {
-        sh 'docker run -d --rm -p 4200:50 jasdhir/emp-angular'
+        sh 'docker run -d --rm -p 4200:80 jasdhir/emp-angular'
       }
         }
   }
