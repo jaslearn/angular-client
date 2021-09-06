@@ -4,10 +4,12 @@ WORKDIR /app
 
 RUN npm install -g @angular/cli
 
-COPY ./package.json .
+#COPY ./package.json .
+COPY package.json /app
 RUN npm install
-COPY . .
+#COPY . .
+COPY . /app
 RUN ng build --prod
 
 FROM nginx as runtime
-COPY --from=build /dist/angular-client /usr/share/nginx/html
+COPY --from=build /app/dist/angular-client /usr/share/nginx/html
