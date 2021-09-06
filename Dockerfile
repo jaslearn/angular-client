@@ -12,7 +12,7 @@ COPY package.json /app
 
 RUN npm install
 
-COPY . /app
+COPY . /usr/src/app
 
 RUN npm run build --prod
 
