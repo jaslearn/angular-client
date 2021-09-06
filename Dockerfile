@@ -10,4 +10,4 @@ COPY . .
 RUN ng build --prod
 
 FROM nginx as runtime
-COPY --from=build /app/dist/angular-client /usr/share/nginx/html
+COPY --from=build /dist/angular-client /usr/share/nginx/html
