@@ -5,7 +5,7 @@ FROM node:latest as build
 
 
 # Set the working directory
-RUN mkdir -p /usr/local/app
+RUN mkdir -pv /usr/local/app
 WORKDIR /usr/local/app
 
 # Add the source code to app
