@@ -14,7 +14,7 @@ RUN pwd
 RUN ls
 
 # Install all the dependencies
-#RUN npm install
+RUN npm install
 
 # Generate the build of the application
 RUN npm run build --prod
