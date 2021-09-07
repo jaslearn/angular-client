@@ -18,7 +18,7 @@ RUN npm install
 # Generate the build of the application
 RUN npm run build --prod
 
-
+RUN ls
 # Stage 2: Serve app with nginx server
 
 # Use official nginx image as the base image
