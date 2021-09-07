@@ -20,4 +20,4 @@ RUN npm run build --prod
 
 FROM nginx:1.21.1-alpine
 
-COPY --from=build-step /usr/src/app /usr/share/nginx/html
+COPY --from=build-step /usr/src/app/dist/angular-client /usr/share/nginx/html
