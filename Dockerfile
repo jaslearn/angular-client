@@ -8,9 +8,6 @@ FROM node:latest as build
 RUN mkdir -p /usr/local/app
 WORKDIR /usr/local/app
 
-# Use official nginx image as the base image
-FROM nginx:latest
-
 # Add the source code to app
 COPY ./ /usr/local/app/
 RUN pwd
@@ -23,9 +20,11 @@ RUN npm install
 RUN npm run build --prod
 RUN pwd
 RUN ls
+
 # Stage 2: Serve app with nginx server
 
-
+# Use official nginx image as the base image
+FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/angular-client /usr/share/nginx/html
