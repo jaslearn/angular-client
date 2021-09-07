@@ -9,7 +9,7 @@ export class EmployeeService {
 
  
   //private baseUrl = 'http://localhost:9090/api/v1/employees';
-  private baseUrl= 'http://3.128.76.46:9090/api/v1/employees';
+  private baseUrl= 'http://3.16.14.172:9090//api/v1/employees';
   constructor(private http: HttpClient) { }
 
   getEmployee(id: number): Observable<any> {
