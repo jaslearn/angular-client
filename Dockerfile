@@ -17,7 +17,7 @@ RUN npm install
 
 # Generate the build of the application
 RUN npm run build --prod
-RUN PWD
+RUN pwd
 RUN ls
 # Stage 2: Serve app with nginx server
 
